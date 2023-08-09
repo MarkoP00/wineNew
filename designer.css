@@ -1,0 +1,156 @@
+.like-body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    /* Mare menjaj ovo ukoliko importujes */
+     flex-wrap: wrap;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 450px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgba(0,0,0,0.7);
+    transition: 1s;
+}
+.card:hover{
+    transform: translateX(50%); 
+    /* Ako necemo da se mrda card brisi ovo */
+}
+.card .imgBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    background-color: #000;
+    transition: 1s;
+    box-shadow: 10px 20px 40px rgba(0,0,0,0.7);
+}
+.card:hover .imgBox{
+    transform: rotateY(-180deg);
+}
+
+.card .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    /* backface-visibility: hidden; */
+    /* Ako imamo 2 slike onda ovde hidden  da ne bude zakomentarisan da ne bi prva slika bila i kad se otvori card*/
+}
+.card .imgBox img:nth-child(2){
+    transform: rotateY(180deg);
+   
+}
+.card .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+.card .details .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card .details .content h2{
+    text-align: center;
+    font-weight: 700;
+    line-height: 1em;
+}
+.card .details .content h2 span{
+    color: #ff275f;
+    font-size: 0.8em;
+
+}
+.card .details .content .social-icons{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.card .details .content .social-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.card .details .content .social-icons a:hover{
+    background: #ff275f;
+}
+@media screen and (max-width: 321px) {
+    .card{     
+        margin-right: 50px;
+        height: 300px;
+        width: 150px;
+    }
+    .card .imgBox img{
+        width: 180px;
+        height: 300px;
+        object-fit: fill;
+        
+    }
+    .like-body{
+    margin-left:70px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .card{     
+        margin-right: 50px;
+        height: 300px;
+        width: 150px;
+    }
+    .card .imgBox img{
+        width: 180px;
+        height: 300px;
+        object-fit: fill;
+        
+    }
+    .like-body{
+    margin-left:70px;
+    }
+}
+@media screen and (max-width: 426px) {
+    .card{     
+        margin-right: 50px;
+        height: 300px;
+        width: 150px;
+    }
+    .card .imgBox img{
+        width: 180px;
+        height: 300px;
+        object-fit: fill;
+        
+    }
+    .like-body{
+    margin-left:60px;
+    }
+}

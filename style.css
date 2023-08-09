@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 1000px;
+    background: #000;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 100px;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: flex-end;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    transition: 1s;
+    z-index:9999 ;
+}
+header.sticky{
+    height:80px;
+}
+header .banner{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+header.sticky .banner{
+    opacity: 0.5;
+}
+header .logo{
+    position: absolute;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 10em;
+    transition: 1s;
+    text-decoration: none;
+    z-index: 1;
+    font-family: 'Caprisimo';
+    font-style: italic;
+}
+header .logo:hover{
+    color: #ff275f;
+}
+header.sticky .logo{
+    position: absolute;
+    font-size: 2em;
+    left: 150px;
+    transform: translate(-50%, -50%);
+}
+nav{
+    position:relative;
+    display: flex;
+    z-index: 1;
+}
+nav ul{
+    position: relative;
+    display: flex;
+    transition: 0.25s;
+    color:#fff;
+    transform: translateX(100px);
+    opacity: 0;
+}
+header.sticky nav ul{
+    transform: translateX(0); 
+    opacity: 1;
+    transition-delay: 0.75s;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    color: #fff;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: #ff275f
+}
+.text2{
+    color: #fff;
+}
+.text1{
+    color: #fff;
+}
+.sec1{
+   margin-top: 30vh;
+   padding: 100px;
+   margin-bottom: 15vh;
+}
+.sec1 h2{
+  font-size: 3em;
+
+}
+.sec1 p {
+    font-size:1.2em ;
+}
+.content1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+.content2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.image img{
+    width: 500px;
+    height: 600px;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s
+}
+.image img:hover{
+    box-shadow: 0px 0px 50px #ff275f;
+}
+/* .image2 img{
+    width: 500px;
+    height: 600px;
+    cursor: pointer;
+    border-radius: 20px;
+} */
+.text{
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.text p{
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+.btn button{
+    padding: 10px;
+    font-weight: 700;
+    background-color: #c51a48;
+    color:#fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn button:hover{
+    background-color: #ee3365;
+    transform: translateY(-5px);
+}
+.container-video{
+    width: 100%;
+    height: 115vh;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    overflow: hidden;
+}
+.content-for-video{
+    text-align: center;
+}
+.content-for-video h2{
+    font-size: 95px;
+    color:#fff;
+    margin-bottom: 50px;
+}
+.content-for-video a{
+    font-size: 23px;
+    text-decoration: none;
+    color:#fff;
+    border: 2px solid #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.content-for-video a:hover{
+    background-color: #fff;
+    color: #000;
+}
+.background-clip{
+    position: absolute;
+    /* bottom: 0; */
+    right: 0;
+    z-index: -1;
+}
+.sec2{
+    margin-bottom: 20vh;
+}
+.sec3{
+    margin-bottom: 150px;
+}
+
+@media(min-aspect-ratio: 16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+@media(max-aspect-ratio: 16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+
+/*Making responsive*/
+@media (max-width: 991px){
+    section,
+    header{
+        padding: 40px;
+    }
+    section h2{
+        font-size: 2em;
+    }
+    header.sticky .logo{
+        left: 120px;
+    }
+    header .logo{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 6em;
+        left: 50%;
+    }
+    header.sticky .banner{
+        /* opacity: 0;  vise mi se svidja kad se vidi*/
+        
+    }
+    nav ul{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    nav.active ul{
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 80px);
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    header.sticky nav ul{
+        opacity: 1;
+        visibility: visible;
+
+    }
+    nav ul li a{
+        font-size: 2em;
+        padding: 5px 15px ;
+    }
+    header.sticky .toggle{
+        position: fixed;
+        top:15px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        border-radius: 5px;
+        background: #fff url(menubar/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    header.sticky .toggle.active{
+        background: #fff url(menubar/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .image img{
+        width: 200px;
+        height: 450px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    /* .image2 img{
+        width: 150%;
+        height: 400px;
+        cursor: pointer;
+        object-fit:fill;
+        position: relative;
+        left: -40px;
+        top: 40px;
+    } */
+    .container-video h2{
+        font-size: 60px ;
+        line-height: 60px;
+    }
+    .container-video{
+        background-color:transparent;
+    }
+    .background-clip{
+        width: 100%;
+    }
+    
+}
+@media (max-width: 321px){
+    .background-clip{
+        width: 100%;
+    }
+}
+/* @media (max-width: 1025px){
+    header .logo{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 6em;
+        left: 66%;
+    }
+} */
